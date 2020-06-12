@@ -20,8 +20,6 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/register": "^7.7.7",
-    "@easylogic/colorpicker": "^1.9.65",
-    "@fortawesome/fontawesome-free": "^5.12.0",
     "@hot-loader/react-dom": "^16.11.0",
     "babel": "^6.23.0",
     "babel-loader": "^8.0.6",
@@ -29,11 +27,8 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "chai": "^4.2.0",
     "css-loader": "^3.4.1",
-    "dom-to-image": "^2.6.0",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.8.0",
-    "firebase": "^6.6.2",
-    "jspdf": "^1.5.3",
     "karma": "^4.4.1",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coverage": "^2.0.1",
@@ -42,12 +37,7 @@
     "karma-webpack": "^4.0.2",
     "mocha": "^6.2.2",
     "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-hot-loader": "^4.12.18",
-    "react-router-dom": "^5.1.2",
-    "recompose": "^0.30.0",
-    "resize-observer-polyfill": "^1.5.1",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.41.5",
@@ -55,6 +45,16 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "papaparse": "^5.1.1"
+    "@easylogic/colorpicker": "^1.9.65",
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "dom-to-image": "^2.6.0",
+    "firebase": "^7.15.1",
+    "jspdf": "^1.5.3",
+    "papaparse": "^5.1.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "recompose": "^0.30.0",
+    "resize-observer-polyfill": "^1.5.1"
   }
 }
