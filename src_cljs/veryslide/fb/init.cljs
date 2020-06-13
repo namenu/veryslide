@@ -1,8 +1,5 @@
 (ns veryslide.fb.init
   (:require ["firebase/app" :as firebase]
-            ["firebase/auth"]
-            ["firebase/firestorage"]
-            ["firebase/storage"]
             [veryslide.fb.auth :refer [on-auth-state-changed]]))
 
 

@@ -4,9 +4,9 @@
   (:require [secretary.core :as secretary]
             [goog.events :as events]
             [goog.history.EventType :as EventType]
-            [reagent.core :as r]
             [reagent.dom :as rdom]
             [veryslide.state :refer [app-state]]
+            [veryslide.fb.init :refer [firebase-init]]
             [veryslide.components.navigation :refer [navigation]]
             [veryslide.pages.landing :refer [landing]]
             [veryslide.pages.sign-up :refer [sign-up]]))
@@ -47,10 +47,14 @@
   [:div "you found a glitch here!"])
 
 
-(defn ^:export main []
-  (app-routes)
+(defn ^:dev/after-reload start []
   (rdom/render [current-page]
                (.getElementById js/document "app")))
 
+(defn ^:export main []
+  (app-routes)
+  (firebase-init)
+  (start))
+
 (defn reload! []
-  (main))
+  (start))
