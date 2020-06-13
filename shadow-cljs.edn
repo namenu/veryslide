@@ -5,10 +5,10 @@
  {:app {:target   :browser
         :output-dir "public/js"
         :asset-path "/js"
-        :modules  {:main {:init-fn veryslide.main/main!}}
+        :modules  {:main {:init-fn veryslide.core/main}}
         :devtools {:http-root "public"
                    :http-port 6500
-                   :after-load veryslide.main/reload!}}}
+                   :after-load veryslide.core/reload!}}}
 
  :nrepl
  {:port 9000}}

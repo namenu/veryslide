@@ -8,7 +8,8 @@
     "build": "webpack --config ./webpack.config.js --mode production",
     "test": "karma start karma.conf.js",
     "lint": "eslint src",
-    "analyze": "source-map-explorer dist/bundle.js"
+    "analyze": "source-map-explorer dist/bundle.js",
+    "css": "node-sass -r -o public/css src"
   },
   "keywords": [],
   "author": "Park Hyunwoo",

@@ -5,4 +5,5 @@
  {org.clojure/clojurescript {:mvn/version "1.10.764"}
   thheller/shadow-cljs {:mvn/version "2.9.10"}
   reagent {:mvn/version "0.10.0"}
+  clj-commons/secretary {:mvn/version "1.2.4"}
   }}

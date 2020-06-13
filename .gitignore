@@ -115,3 +115,4 @@ webpack-stats.json
 
 # Coverage files
 coverage/
+public/js/cljs-runtime

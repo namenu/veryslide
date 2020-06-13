@@ -1,5 +1,6 @@
-(ns veryslide.components.sign-in)
+(ns veryslide.components.sign-in
+  (:require [veryslide.fb.auth :as auth]))
 
 (defn sign-in []
   [:p "Already have an account? "
-   [:a {:to "{ROUTES.SIGNIN}"} "Sign in"] "."])
+   [:a {:on-click #(auth/sign-in)} "Sign in"] "."])
