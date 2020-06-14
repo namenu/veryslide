@@ -1,6 +1,5 @@
 (ns veryslide.pages.landing
   (:require [veryslide.components.footer :refer [footer]]
-            [veryslide.components.sign-in :refer [sign-in]]
             [veryslide.state :as state]))
 
 (defn landing []
@@ -12,7 +11,7 @@
       [:h2 "Forge and share versatile slides."]
       (if @state/user
         [:div
-         [:p (str "Welcome back, " (:name @state/user))]
+         [:p (str "Welcome back, " (.-displayName @state/user))]
          [:a.Button.Primary.Large {:href "/home"} "Go to my page" [:i.fas.fa-arrow-circle-right.right]]]
         [:div
          [:a.Button.Primary.Large {:href "/#/sign-up"} "Sign up" [:i.fas.fa-arrow-circle-right.right]]
