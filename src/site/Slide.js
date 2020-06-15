@@ -6,7 +6,7 @@ import { compose } from 'recompose';
 import { withFirebase } from './Firebase';
 import * as ROUTES from './constants/routes';
 
-import Veryslide from '../Veryslide';
+import Veryslide from 'lib/Veryslide';
 
 class SlideBase extends Component {
   constructor(props) {

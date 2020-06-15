@@ -7,6 +7,12 @@ module.exports = (env, argv) => {
   return {
     mode,
     entry: ['react-hot-loader/patch', './src/index.js', ],
+    resolve: {
+      modules: [
+        path.resolve(__dirname, 'src'),
+        path.resolve(__dirname, 'lib'),
+         'node_modules']
+    },
     module: {
       rules: [
         {
