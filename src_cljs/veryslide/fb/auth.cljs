@@ -1,6 +1,5 @@
 (ns veryslide.fb.auth
   (:require ["firebase/app" :as firebase]
-            [secretary.core :as secretary]
             [veryslide.state :as state]))
 
 (defn current-user []
@@ -9,12 +8,13 @@
         (.collection "users")
         (.doc uid))))
 
-(defn update-profile [{:keys [username email password-one]} on-error]
+(defn update-profile [{:keys [username email password-one]} on-success on-error]
   (let [auth (firebase/auth)]
-    (-> (.createUserWithEmailAndPassword auth email password-one)
+    (-> auth
+        (.createUserWithEmailAndPassword auth email password-one)
         (.then #(.. auth -currentUser (updateProfile #js {:displayName username})))
         (.then #(.set (current-user) #js {:username username :email email}))
-        (.then #(secretary/dispatch! "/"))
+        (.then on-success)
         (.catch on-error))))
 
 (defn on-auth-state-changed []
@@ -24,3 +24,13 @@
       (if user
         (reset! state/user user)
         (reset! state/user nil)))))
+
+(defn sign-in [{:keys [email password]} on-success on-error]
+  (-> (firebase/auth)
+      (.signInWithEmailAndPassword email password)
+      (.then on-success)
+      (.catch on-error)))
+
+(defn sign-out [cb]
+  (.then (.signOut (firebase/auth))
+         cb))

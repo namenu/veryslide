@@ -1,6 +1,7 @@
 (ns veryslide.pages.sign-up
   (:require [reagent.core :as r]
-            [veryslide.fb.auth :refer [update-profile]]))
+            [veryslide.fb.auth :refer [update-profile]]
+            [secretary.core :as secretary]))
 
 (defn invalid? [{:keys [username email password-one password-two]}]
   (or (empty? username)
@@ -24,7 +25,7 @@
        (when @error
          [:p.Label.Error (.-message @error)])
        [:form {:on-submit (fn [event]
-                            (update-profile @values #(reset! error %))
+                            (update-profile @values #(secretary/dispatch! "/") #(reset! error %))
                             (.preventDefault event))}
         [input-group :username :i.fas.fa-user "text" "Full Name" values]
         [input-group :email :i.fas.fa-envelope "text" "Email Address" values]
